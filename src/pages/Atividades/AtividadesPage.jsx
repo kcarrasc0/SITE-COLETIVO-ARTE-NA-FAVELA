@@ -27,27 +27,27 @@ const atividadesData = [
   },
   {
     image: imgComBreaknasescolas,
-    title: 'Comunicação Ambiental',
+    title: 'Break nas Escolas',
     description: 'Nascido no coração da cultura hip-hop como uma poderosa expressão de liberdade e resistência, o breakdance é a estrela deste projeto. Levamos a arte do break para escolas da periferia, ensinando não apenas os movimentos, mas também a história e os valores do hip-hop como forma de empoderamento e superação de preconceitos. As atividades culminam em uma oficina de grafite, unindo dois elementos marcantes da cultura de rua e transformando os muros em telas de expressão.',
   },
   {
     image: imgCineIbura,
-    title: 'Batalha Cultural',
+    title: 'Cine Ibura',
     description: 'O Cine Ibura é o nosso cineclube comunitário. O projeto promove exibições de filmes, documentários e produções audiovisuais que estimulam o debate sobre questões sociais, culturais e ambientais, contendo também o Slan de poesia. É um espaço para ampliar repertórios, formar senso crítico e celebrar o cinema como ferramenta de reflexão e transformação.',
   },
   {
     image: imgResenhaib,
-    title: 'Comunicação Ambiental',
+    title: 'Resenha IB',
     description: 'A "Resenha IB" é um projeto voltado ao fortalecimento de MCs e artistas da cena hip-hop local. A iniciativa oferece uma estrutura para a gravação de músicas autorais, promove encontros para troca de experiências (networking) e realiza palestras sobre a história do rap e a pauta antirracista. Além disso, o projeto inclui um espaço de autocuidado, oferecendo serviços como cortes de cabelo e tranças, fortalecendo a autoestima e a identidade dos jovens.',
   },
   {
     image: imgPeriferiaTech,
-    title: 'Batalha Cultural',
+    title: 'Periferia Tech',
     description: 'Oferecemos cursos de Tecnologia de forma remota, tecnolohgia no dia a dia, na atuação profissional e também ensinamos boas práticas do mercado de trabalho.',
   },
   {
     image: imgEcoVision,
-    title: 'Batalha Cultural',
+    title: 'EcoVision',
     description: 'Web App de monitoramento ambiental criado nas aulas de Tecnologia do Comunicação Ambiental, para acompanhar dados de desmatamento.',
   },
 ];
