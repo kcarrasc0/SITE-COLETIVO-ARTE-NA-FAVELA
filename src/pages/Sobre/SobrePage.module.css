@@ -1,0 +1,141 @@
+/* Estilização geral da página Sobre */
+.sobreMain {
+    padding-top: 100px;
+    background-color: #ffff; /* Cor de fundo escura, como no design */
+    color: #000; /* Cor do texto principal */
+    font-family: Arial, sans-serif;
+}
+
+/* Seção do Banner */
+.banner {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerOverlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 20px;
+    color: #FFFFFF;
+}
+
+/* Seção "O Coletivo" */
+.coletivo {
+    padding: 60px 15%;
+    text-align: center;
+}
+
+.coletivo h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.coletivo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.ctaButton {
+    background-color: #E53935; /* Cor vermelha/rosa do botão */
+    color: #FFFFFF;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #C62828;
+}
+
+/* Seção "Nossas Lideranças" */
+.liderancas {
+    padding: 60px 10%;
+    color: #FFFFFF;
+    background-color: #1a1a1a; /* Um tom ligeiramente diferente para separar seções */
+}
+
+.liderancas h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    color: #E53935; /* Cor do destaque */
+}
+
+.lideresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.liderCard {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.liderCard img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #E53935;
+}
+
+.liderInfo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.liderInfo p {
+    color: #a9a9a9;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .coletivo {
+        padding: 40px 5%;
+    }
+
+    .liderancas {
+        padding: 40px 5%;
+    }
+
+    .liderCard {
+        flex-direction: column;
+        text-align: center;
+    }
+}

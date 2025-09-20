@@ -1,0 +1,88 @@
+.pageContainer {
+  background-color: #f8f9fa; /* Fundo claro como no design */
+  color: #333; /* Texto escuro */
+  padding-top: 100px; /* Espaçamento para o header fixo */
+}
+
+/* Banner (reaproveitado de outras páginas) */
+.banner {
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Texto do banner branco */
+}
+
+.bannerOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+/* Seção de Introdução (2 colunas) */
+.introSection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 60px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.introText {
+  flex: 2; /* Ocupa 2/3 do espaço */
+}
+
+.introText h2 {
+  font-size: 2.2rem;
+  color: #008080; /* Um tom de verde/ciano */
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.introText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.introEmblem {
+  flex: 1; /* Ocupa 1/3 do espaço */
+  text-align: center;
+}
+
+.introEmblem img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 100%;
+}
+
+/* Seção da Imagem Principal */
+.mainImageSection {
+  padding: 0 10%;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.mainImageSection img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .introSection {
+    flex-direction: column-reverse; /* Coloca a imagem em cima no mobile */
+    text-align: center;
+  }
+}

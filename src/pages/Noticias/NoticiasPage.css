@@ -1,0 +1,139 @@
+.noticias-container {
+  /* Unimos as duas regras: 100px no topo, 5% nos lados, 2rem na base */
+  padding: 100px 5% 2rem;
+  background: #f9f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/* Destaques */
+.destaques {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.destaque-principal {
+  position: relative;
+}
+
+.destaque-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.destaques-secundarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+}
+
+.card > * {
+  grid-area: 1 / 1;
+}
+
+/* Card genérico */
+.card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9; /* mantém proporção correta */
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay unificado */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  color: white;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Títulos */
+.overlay h2,
+.overlay h3 {
+  margin: 0.5rem 0 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.overlay h2 {
+  font-size: 1.4rem;
+}
+
+.overlay h3 {
+  font-size: 1rem;
+}
+
+/* Tags */
+.tag {
+  background: #E53935; /* azul como no Figma */
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+/* Sessão Mais lidas */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.noticias-grid .card img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.noticias-grid .card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  line-height: 1.3;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
+  .destaques-secundarios {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .noticias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .destaques-secundarios {
+    grid-template-columns: 1fr;
+  }
+
+  .noticias-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,28 @@
+.homeContainer{
+  padding-top: 100px;
+}
+
+.carouselSection {
+  margin-bottom: 4rem;
+}
+
+.coletivoSection {
+  padding: 4rem 2rem;
+  background: #19181C;
+  color: white;
+  text-align: center;
+}
+
+.atividadesSection {
+  padding: 4rem 2rem;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.atividadesSection ul {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
