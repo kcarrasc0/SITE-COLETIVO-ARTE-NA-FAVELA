@@ -6,14 +6,14 @@ import Footer from "../../components/Footer/Footer";
 import styles from "./NoticiasPage.module.css"; 
 
 // PASSO 2: Verifique se estes caminhos estão corretos em relação a este arquivo
-import imgJovensNoClima from "../../assets/images/jovensnoclima.jpg";
-import imgCursoTech from "../../assets/images/cursotech.jpg";
-import imgFeiraLiteraria from "../../assets/images/feiral.jpg";
-import imgEventoJovensClima from "../../assets/images/eventjc.jpg";
+// import imgJovensNoClima from "../../assets/images/jovensnoclima.jpg";
+// import imgCursoTech from "../../assets/images/cursotech.jpg";
+// import imgFeiraLiteraria from "../../assets/images/feiral.jpg";
+// import imgEventoJovensClima from "../../assets/images/eventjc.jpg";
 // import imgPlanoNacional from "../../assets/images/planonacional.jpg";
 // import imgFeiraPataxoh from "../../assets/images/feirapataxo.jpg";
 // import imgCOP30 from "../../assets/images/Image3.jpg";
-// import imgComunicacao1 from "../../assets/images/comunicacao1.jpg"; //
+ import imgComunicacao1 from "../../assets/images/comunicacao1.jpg";
 
 
 function NoticiasPage() {
