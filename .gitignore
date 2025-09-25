@@ -1,0 +1,52 @@
+# ===== Node & monorepos =====
+**/node_modules/
+
+# ===== Vite (build/cache) =====
+dist/
+.vite/
+
+# ===== Logs =====
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===== Test/Coverage =====
+coverage/
+*.lcov
+.nyc_output/
+
+# ===== Lint/TypeScript caches =====
+.eslintcache
+*.tsbuildinfo
+
+# ===== Env files (Vite usa .env por modo) =====
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+# mantenha exemplos versionados
+!.env.example
+!.env.sample
+
+# ===== Outras dirs de dependências =====
+bower_components/
+jspm_packages/
+build/Release/
+
+# ===== Editores/OS =====
+.vscode/
+.idea/
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+.Spotlight-V100
+.Trashes
+*.swp
+*.swo
+.nfs*
