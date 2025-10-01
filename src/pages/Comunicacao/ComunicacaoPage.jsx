@@ -1,12 +1,10 @@
-import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import styles from './ComunicacaoPage.module.css';
 
-// TODO: Substitua os caminhos pelas suas imagens corretas da pasta assets
-import bannerImage from '../../assets/images/comunicacao2.jpg';
-import emblemImage from '../../assets/images/logocomunicacao.jpg';
-import mainImage from '../../assets/images/comunicacao1.jpg';
+import bannerImage from '/assets/images/comunicacao2.jpg';
+import emblemImage from '/assets/images/logos/logocomunicacao.jpg';
+import mainImage from '/assets/images/comunicacao1.jpg';
 
 const ComunicacaoPage = () => {
   return (

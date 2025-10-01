@@ -1,31 +1,82 @@
 .section {
-  padding: 80px 10%;
-  background: #fff;
+  padding: 4rem 0;
+  width: 100%;
+  background-color: #f8f9fa; 
 }
 
-.content {
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 4rem;
 }
 
-.content h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+.imageWrapper {
+  flex: 1;
+  min-width: 300px;
 }
 
-.content h2 span {
-  color: #e63946;
-}
-
-.content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.content img {
-  width: 350px;
-  border-radius: 20px;
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Sombra sutil e moderna */
   object-fit: cover;
+}
+
+/* Container do texto */
+.textWrapper {
+  flex: 1; /* Ocupa a outra metade do espaço */
+}
+
+/* Estilo do título */
+.title {
+  font-size: 2.5rem; /* Tamanho grande e impactante */
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 1.5rem;
+}
+
+/* Destaque no título com a cor de acento */
+.title span {
+  color: #e63946; /* Exemplo de cor de acento (índigo) */
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .textWrapper {
+    order: 2; 
+  }
+
+  .imageWrapper {
+    order: 1;
+  }
 }

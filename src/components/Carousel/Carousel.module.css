@@ -1,134 +1,148 @@
-:root {
-  --accent: #e63946;
-  --bgGlass: color-mix(in oklab, #0b0b10 20%, white 80%);
-  --strokeGlass: color-mix(in oklab, #0b0b10 10%, white 90%);
-  --ring: color-mix(in oklab, var(--accent) 80%, white 20%);
+/* Animação de fade-in para a imagem */
+@keyframes fadeIn {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .carousel {
   position: relative;
-  width: min(1100px, 100%);
-  aspect-ratio: 16 / 9;
-  max-height: 700px;
-  margin-inline: auto;
-  border-radius: 24px;
-  overflow: hidden;
-  overflow: clip;
-  background: #0f0f14;
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.35),
-    0 1px 0 rgba(255,255,255,.06) inset;
-  margin-top: 3rem;
-}
-
-.carousel img {
   width: 100%;
+  max-width: 900px;
+  max-height: 500px;
   height: 100%;
-  display: block;
-  object-fit: cover;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity .6s ease, transform .8s cubic-bezier(.2,.6,.2,1);
-  animation: fade-in .5s ease both;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 16px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; transform: scale(1.02); }
-  to   { opacity: 1; transform: scale(1); }
+.imageContainer {
+  width: 100%;
+  background-color: #151515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel img.is-active {
+.image {
+  width: 100%;
+  object-fit: cover; 
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navBtn svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+.carousel:hover .navBtn {
   opacity: 1;
-  transform: scale(1);
+}
+
+.navBtn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
 }
 
 .dots {
   position: absolute;
+  bottom: 1.5rem;
   left: 50%;
-  bottom: clamp(8px, 2.2vw, 18px);
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
-  padding: 8px 12px;
-  background: color-mix(in oklab, var(--bgGlass), transparent 35%);
-  backdrop-filter: blur(8px) saturate(1.2);
-  -webkit-backdrop-filter: blur(8px) saturate(1.2);
-  border: 1px solid color-mix(in oklab, var(--strokeGlass), transparent 50%);
-  border-radius: 999px;
-  box-shadow:
-    0 6px 18px rgba(0,0,0,.25),
-    0 0 1px rgba(255,255,255,.35) inset;
+  gap: 12px;
+  z-index: 10;
 }
 
 .dot {
-  appearance: none;
-  width: 18px;
-  height: 8px;
-  border: 0;
-  border-radius: 999px;
-  background: color-mix(in oklab, #d7d7dc 85%, #ffffff 15%);
-  opacity: .75;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: width .25s ease, background .25s ease, opacity .25s ease, transform .15s ease;
+  padding: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.dot:hover { opacity: 1; transform: translateY(-1px); }
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
 .dot.active {
-  width: 28px;
-  opacity: 1;
-  background: var(--accent);
-  box-shadow:
-    0 6px 14px color-mix(in oklab, var(--accent) 60%, transparent),
-    0 0 0 1px color-mix(in oklab, var(--accent) 50%, white 50%) inset;
+  background-color: white;
+  transform: scale(1.2);
 }
 
-.dot:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 3px color-mix(in oklab, var(--ring) 60%, transparent),
-    0 0 0 1px rgba(255,255,255,.6) inset;
+@media (max-width: 640px) {
+  .navBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navBtn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .prev {
+    left: 0.5rem;
+  }
+
+  .next {
+    right: 0.5rem;
+  }
+
+  .dots {
+    bottom: 1rem;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
 }
 
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  translate: 0 -50%;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid color-mix(in oklab, var(--strokeGlass), transparent 40%);
-  background: color-mix(in oklab, var(--bgGlass), transparent 30%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: white;
-  font-size: 24px;
-  line-height: 0;
-  cursor: pointer;
-  box-shadow: 0 10px 18px rgba(0,0,0,.25);
-  transition: transform .15s ease, background .25s ease, box-shadow .25s ease;
-}
-.nav-btn:hover { transform: translateY(-1px) scale(1.03); }
-.nav-btn:active { transform: translateY(0) scale(.98); }
-.nav-btn:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 3px color-mix(in oklab, var(--ring) 60%, transparent),
-    0 10px 18px rgba(0,0,0,.25);
-}
-.nav-btn.prev { left: clamp(8px, 2vw, 16px); }
-.nav-btn.next { right: clamp(8px, 2vw, 16px); }
+@media (max-width: 375px) {
+  .dots {
+    bottom: .5rem;
+    gap: 4px;
+  }
 
-.nav-btn svg { 
-  pointer-events: none;
-  width: 24px;
-  height: 24px;
-  stroke: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .carousel { background: #0b0b10; }
-  .dot { background: color-mix(in oklab, #bfc2cc 80%, #fff 20%); }
+  .dot {
+    width: 4px;
+    height: 4px;
+  }
 }

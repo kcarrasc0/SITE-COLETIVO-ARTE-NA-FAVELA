@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.css";
 
 const images = [
-  "/images/slide1.jpg",
-  "/images/slide3.jpg",
-  "/images/slide4.jpg",
-  "/images/slide5.jpg",
-  "/images/slide6.jpg",
+  "/assets/images/slide/slide1.jpg",
+  "/assets/images/slide/slide2.jpg",
+  "/assets/images/slide/slide3.jpg",
+  "/assets/images/slide/slide4.jpg",
+  "/assets/images/slide/slide5.jpg",
 ];
 
 const AUTOPLAY_MS = 4000;
@@ -59,30 +59,34 @@ const Carousel = () => {
       onMouseEnter={stop}
       onMouseLeave={start}
     >
-      <img
-        key={images[current]}          
-        src={images[current]}
-        alt={`Slide ${current + 1} de ${images.length}`}
-      />
+      <div className={styles.imageContainer}>
+        <img
+          key={images[current]}
+          src={images[current]}
+          alt={`Slide ${current + 1} de ${images.length}`}
+          className={styles.image}
+        />
+      </div>
 
       <button
         type="button"
-        className={`${styles["nav-btn"]} ${styles.prev}`}
+        className={`${styles.navBtn} ${styles.prev}`}
         aria-label="Anterior"
         onClick={prev}
       >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(180deg)" }}>
-          <path d="M10 7L15 12L10 17" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
+
       <button
         type="button"
-        className={`${styles["nav-btn"]} ${styles.next}`}
+        className={`${styles.navBtn} ${styles.next}`}
         aria-label="Próximo"
         onClick={next}
       >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 7L15 12L10 17" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
 

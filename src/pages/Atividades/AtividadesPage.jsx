@@ -4,14 +4,14 @@ import Footer from '../../components/Footer/Footer';
 import styles from './AtividadesPage.module.css';
 
 // TODO: Substitua os caminhos pelas suas imagens corretas da pasta assets
-import bannerImage from '../../assets/images/image1.jpg'; // Imagem de fundo do banner
-import imgComAmbiental from '../../assets/images/atividade1.jpg';
-import imgBatalhaCultural from '../../assets/images/atividade2.jpg';
-import imgComBreaknasescolas from '../../assets/images/atividade3.jpg';
-import imgCineIbura from '../../assets/images/atividade4.jpg';
-import imgResenhaib from '../../assets/images/atividade5.png';
-import imgPeriferiaTech from '../../assets/images/atividade6.JPG';
-import imgEcoVision from '../../assets/images/atividade7.png';
+import bannerImage from '/assets/images/atividade/image1.jpg'; // Imagem de fundo do banner
+import imgComAmbiental from '/assets/images/atividade/atividade1.jpg';
+import imgBatalhaCultural from '/assets/images/atividade/atividade2.jpg';
+import imgComBreaknasescolas from '/assets/images/atividade/atividade3.jpg';
+import imgCineIbura from '/assets/images/atividade/atividade4.jpg';
+import imgResenhaib from '/assets/images/atividade/atividade5.png';
+import imgPeriferiaTech from '/assets/images/atividade/atividade6.jpg';
+import imgEcoVision from '/assets/images/atividade/atividade7.png';
 
 // Dados das atividades para facilitar a manutenção
 const atividadesData = [

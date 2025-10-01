@@ -1,31 +1,30 @@
 /* src/components/Footer/Footer.module.css */
 
 .footer {
-  background-color: #fff; /* Cor de fundo escura */
+  background-color: #fff;
   color: #1c1c1c;
   padding: 2rem 5%;
   text-align: center;
 }
 
-/* ESTILOS ADICIONADOS PARA A SEÇÃO DE PARCEIROS */
 .parceiros {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #333; /* Linha para separar do copyright */
+  border-bottom: 1px solid #999;
 }
 
 .parceirosTitulo {
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: normal;
-  color: #ccc;
+  color: #999;
 }
 
 .logosContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px; /* Espaço entre os logos */
+  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -38,8 +37,6 @@
 .logosContainer img:hover {
   opacity: 1;
 }
-/* FIM DOS ESTILOS ADICIONADOS */
-
 
 .copyright {
   font-size: 0.9rem;

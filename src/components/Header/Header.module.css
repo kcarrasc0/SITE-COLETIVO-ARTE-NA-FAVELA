@@ -1,106 +1,114 @@
-/* ===== Header base ===== */
+/* Estilo principal do cabeçalho */
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
-  background-color: #F4E4E4;
-  position: fixed;
-  inset: 0 0 auto 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.logoContainer img { height: 60px; }
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
 
-/* ===== Nav pill ===== */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
 .nav {
-  background-color: #e63946;
-  padding: 8px;
-  border-radius: 9999px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  display: flex;
+  align-items: center;
 }
 
 .menu {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 8px;
   margin: 0;
   padding: 0;
+  gap: 0.5rem;
 }
 
-/* ===== Item (ícone + label que expande) ===== */
 .item {
-  --padX: 12px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0;                    /* gap vira 8px quando label expande */
-  color: #fff;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   text-decoration: none;
-  padding: 6px var(--padX);
-  border-radius: 9999px;
-  white-space: nowrap;
-  background: transparent;
-  transition: background-color .25s ease, color .2s ease;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.item:hover,
-.item:focus-visible {
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
   color: #e63946;
-  background-color: #F4E4E4;
-  outline: none;
 }
 
-/* Ícone usa a cor do texto (currentColor) */
 .icon {
-  font-size: 20px;
-  line-height: 1;
-  display: grid;
-  place-items: center;
-  width: 22px;
-  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Label começa retraído */
-.label {
-  overflow: hidden;
-  max-width: 0;
-  opacity: 0;
-  margin-left: 0;
-  transition:
-    max-width .28s cubic-bezier(.2,.7,.2,1),
-    opacity .18s ease,
-    margin-left .2s ease;
-  will-change: max-width;
-  font-weight: 600;
+.icon svg {
+  width: 20px;
+  height: 20px;
 }
 
-/* Ao hover/focus, só o item ativo expande o texto */
-.item:hover .label,
-.item:focus-visible .label {
-  max-width: 420px;          /* grande o bastante para "Comunicação Ambiental" */
-  opacity: 1;
-  margin-left: 8px;          /* cria espaço entre ícone e texto */
-}
-
-/* Acessibilidade teclado */
-.item:focus-visible {
-  box-shadow: 0 0 0 3px rgba(230,57,70,.25);
-}
-
-/* Mobile: sem hover – mostra os rótulos sempre */
-@media (hover: none) {
-  .label {
-    max-width: 420px;
-    opacity: 1;
-    margin-left: 8px;
+@media (max-width: 990px) {
+  .header {
+    top: auto;
+    bottom: 0;
+    border-bottom: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
-}
 
-/* Opcional: reduzir movimento */
-@media (prefers-reduced-motion: reduce) {
-  .label { transition: none; }
-  .item  { transition: none; }
+  .container {
+    padding: 0.5rem 1rem;
+    height: 100px;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .label {
+    display: none;
+  }
+  
+  .item {
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }

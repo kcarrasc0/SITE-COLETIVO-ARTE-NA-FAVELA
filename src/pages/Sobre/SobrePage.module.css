@@ -1,141 +1,170 @@
-/* Estilização geral da página Sobre */
-.sobreMain {
-    padding-top: 100px;
-    background-color: #ffff; /* Cor de fundo escura, como no design */
-    color: #000; /* Cor do texto principal */
-    font-family: Arial, sans-serif;
+:root {
+  --accent-color: #e63946;
 }
 
-/* Seção do Banner */
 .banner {
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 50vh;
+  min-height: 350px;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 
 .bannerOverlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
 }
 
-.banner h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0 20px;
-    color: #FFFFFF;
+.bannerTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* Seção "O Coletivo" */
-.coletivo {
-    padding: 60px 15%;
-    text-align: center;
+.contentSection {
+  padding: 4rem 0;
+  width: 100%;
 }
 
-.coletivo h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: bold;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.coletivo p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-}
-
-.ctaButton {
-    background-color: #E53935; /* Cor vermelha/rosa do botão */
-    color: #FFFFFF;
-    border-radius: 30px;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.ctaButton:hover {
-    background-color: #C62828;
-}
-
-/* Seção "Nossas Lideranças" */
-.liderancas {
-    padding: 60px 10%;
-    color: #FFFFFF;
-    background-color: #1a1a1a; /* Um tom ligeiramente diferente para separar seções */
-}
-
-.liderancas h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 40px;
+.contentSection h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .highlight {
-    color: #E53935; /* Cor do destaque */
+  color: var(--accent-color);
+}
+
+.contentSection p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin-bottom: 1.5rem;
+  max-width: 720px; /* Limita a largura do texto para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.ctaButton {
+  display: inline-block;
+  margin: 1rem auto 0;
+  padding: 0.8rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.liderancasBg {
+  background-color: #f8f9fa; /* Fundo sutil para diferenciar a seção */
 }
 
 .lideresContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .liderCard {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.liderCard img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #E53935;
+.liderCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08), 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.liderImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.liderInfo {
+  padding: 1.5rem;
+  text-align: left;
 }
 
 .liderInfo h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.25rem;
+}
+
+.liderInfo h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
 }
 
 .liderInfo p {
-    color: #a9a9a9;
-    font-size: 1rem;
-    line-height: 1.5;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+  margin: 0;
+  max-width: none;
 }
 
-/* --- Media Queries para Responsividade --- */
 
+/* --- Media Queries para Telas Menores --- */
 @media (max-width: 768px) {
-    .banner h1 {
-        font-size: 2rem;
-    }
+  .bannerTitle {
+    font-size: 2.25rem;
+  }
 
-    .coletivo {
-        padding: 40px 5%;
-    }
+  .contentSection {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
 
-    .liderancas {
-        padding: 40px 5%;
-    }
+  .contentSection h2 {
+    font-size: 2rem;
+  }
 
-    .liderCard {
-        flex-direction: column;
-        text-align: center;
-    }
+  .contentSection p {
+    font-size: 1rem;
+  }
 }
