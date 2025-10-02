@@ -62,8 +62,8 @@ Este projeto foi construído utilizando tecnologias modernas de desenvolvimento 
 
 O projeto está organizado da seguinte forma para facilitar a manutenção e escalabilidade:
 
-```
 
+```
 SITE-COLETIVO-ARTE-NA-FAVELA/
 │
 ├── dist/                   \# Pasta de build, com os arquivos finais para produção
@@ -96,8 +96,7 @@ SITE-COLETIVO-ARTE-NA-FAVELA/
 ├── index.html              \# Template HTML principal
 ├── package.json            \# Metadados e dependências do projeto
 └── README.md               \# Este arquivo :)
-
-````
+```
 
 ---
 
