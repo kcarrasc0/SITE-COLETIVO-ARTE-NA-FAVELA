@@ -137,6 +137,4 @@ Para executar este projeto localmente, siga os passos abaixo:
     ```bash
     npm run dev
     ```
-
-5.  Abra seu navegador e acesse `http://localhost:5173` (ou a porta indicada no seu terminal).
 ````
