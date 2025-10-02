@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.css";
 
@@ -11,14 +12,26 @@ const images = [
 
 const AUTOPLAY_MS = 4000;
 
-const Carousel = () => {
+export default function Carousel() {
   const [current, setCurrent] = useState(0);
+  const [loaded, setLoaded] = useState(() => images.map((_, i) => i === 0));
   const timerRef = useRef(null);
+
+  // Pré-carrega imagens para evitar flash
+  useEffect(() => {
+    images.forEach((src, i) => {
+      const img = new Image();
+      img.src = src;
+      img.decoding = "async";
+      img.onload = () =>
+        setLoaded(prev => (prev[i] ? prev : prev.map((v, idx) => (idx === i ? true : v))));
+    });
+  }, []);
 
   const start = () => {
     stop();
     timerRef.current = setInterval(() => {
-      setCurrent((p) => (p + 1) % images.length);
+      setCurrent(p => (p + 1) % images.length);
     }, AUTOPLAY_MS);
   };
 
@@ -30,8 +43,9 @@ const Carousel = () => {
   };
 
   const goTo = (i) => {
+    const idx = (i + images.length) % images.length;
+    setCurrent(idx);
     stop();
-    setCurrent((i + images.length) % images.length);
     start();
   };
 
@@ -59,13 +73,22 @@ const Carousel = () => {
       onMouseEnter={stop}
       onMouseLeave={start}
     >
-      <div className={styles.imageContainer}>
-        <img
-          key={images[current]}
-          src={images[current]}
-          alt={`Slide ${current + 1} de ${images.length}`}
-          className={styles.image}
-        />
+      <div className={styles.stage} aria-live="polite">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Slide ${i + 1} de ${images.length}`}
+            className={[
+              styles.slide,
+              i === current ? styles.active : "",
+              loaded[i] ? styles.loaded : styles.notLoaded,
+            ].join(" ")}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            draggable={false}
+          />
+        ))}
       </div>
 
       <button
@@ -74,7 +97,7 @@ const Carousel = () => {
         aria-label="Anterior"
         onClick={prev}
       >
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(180deg)" }}>
+        <svg viewBox="0 0 24 24" fill="none" style={{ transform: "rotate(180deg)" }}>
           <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
@@ -85,7 +108,7 @@ const Carousel = () => {
         aria-label="Próximo"
         onClick={next}
       >
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 24 24" fill="none">
           <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
@@ -98,13 +121,11 @@ const Carousel = () => {
             role="tab"
             aria-selected={index === current}
             aria-label={`Ir para o slide ${index + 1}`}
-            className={`${styles.dot} ${index === current ? styles.active : ""}`}
+            className={`${styles.dot} ${index === current ? styles.activeDot : ""}`}
             onClick={() => goTo(index)}
           />
         ))}
       </div>
     </div>
   );
-};
-
-export default Carousel;
+}

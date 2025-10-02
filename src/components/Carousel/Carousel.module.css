@@ -1,11 +1,7 @@
-/* Animação de fade-in para a imagem */
+/* Animação de fade-in para o slide ativo */
 @keyframes fadeIn {
-  from {
-    opacity: 0.6;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
 }
 
 .carousel {
@@ -18,19 +14,38 @@
   overflow: hidden;
   border-radius: 16px;
   -webkit-tap-highlight-color: transparent;
-}
-
-.imageContainer {
-  width: 100%;
+  aspect-ratio: 16 / 9;
   background-color: #151515;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.image {
+.stage {
+  position: relative;
   width: 100%;
-  object-fit: cover; 
+  height: 100%;
+  contain: paint;
+  display: block;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);  
+  will-change: opacity;
+  transition: opacity 280ms ease-in-out;
+}
+
+.slide.loaded { opacity: 0; }
+.slide.notLoaded { opacity: 0; }
+
+/* Slide visível */
+.slide.active {
+  opacity: 1;
   animation: fadeIn 0.8s ease-in-out;
 }
 
@@ -48,8 +63,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0; /* Começa invisível */
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.16s ease;
 }
 
 .navBtn svg {
@@ -67,13 +82,8 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-.prev {
-  left: 1rem;
-}
-
-.next {
-  right: 1rem;
-}
+.prev { left: 1rem; }
+.next { right: 1rem; }
 
 .dots {
   position: absolute;
@@ -100,49 +110,22 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.dot.active {
+.dot.active,
+.activeDot {
   background-color: white;
   transform: scale(1.2);
 }
 
 @media (max-width: 640px) {
-  .navBtn {
-    width: 32px;
-    height: 32px;
-  }
-
-  .navBtn svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .prev {
-    left: 0.5rem;
-  }
-
-  .next {
-    right: 0.5rem;
-  }
-
-  .dots {
-    bottom: 1rem;
-    gap: 8px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
+  .navBtn { width: 32px; height: 32px; }
+  .navBtn svg { width: 20px; height: 20px; }
+  .prev { left: 0.5rem; }
+  .next { right: 0.5rem; }
+  .dots { bottom: 1rem; gap: 8px; }
+  .dot { width: 8px; height: 8px; }
 }
 
 @media (max-width: 375px) {
-  .dots {
-    bottom: .5rem;
-    gap: 4px;
-  }
-
-  .dot {
-    width: 4px;
-    height: 4px;
-  }
+  .dots { bottom: .5rem; gap: 4px; }
+  .dot { width: 6px; height: 6px; }
 }

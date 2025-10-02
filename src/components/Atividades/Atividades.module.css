@@ -33,7 +33,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
@@ -64,6 +64,7 @@
   font-weight: 600;
   margin-top: auto;
   transition: all 0.3s;
+  cursor: pointer; 
+  position: relative;
+  z-index: 2;
 }
-
-
