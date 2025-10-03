@@ -23,21 +23,17 @@
 .image {
   width: 100%;
   height: auto;
-  border-radius: 16px; /* Bordas arredondadas */
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
-    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Sombra sutil e moderna */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
 
-/* Container do texto */
 .textWrapper {
-  flex: 1; /* Ocupa a outra metade do espaço */
+  flex: 1;
 }
 
-/* Estilo do título */
 .title {
-  font-size: 2.5rem; /* Tamanho grande e impactante */
-  font-weight: 700;
+  font-size: 2.5rem;
   color: #212529;
   margin-bottom: 1.5rem;
 }

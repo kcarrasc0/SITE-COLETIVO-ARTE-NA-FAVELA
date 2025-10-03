@@ -14,24 +14,19 @@ const AUTOPLAY_MS = 4000;
 
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
-  const [loaded, setLoaded] = useState(() => images.map((_, i) => i === 0));
   const timerRef = useRef(null);
+  const stageRef = useRef(null);
 
-  // Pré-carrega imagens para evitar flash
-  useEffect(() => {
-    images.forEach((src, i) => {
-      const img = new Image();
-      img.src = src;
-      img.decoding = "async";
-      img.onload = () =>
-        setLoaded(prev => (prev[i] ? prev : prev.map((v, idx) => (idx === i ? true : v))));
-    });
-  }, []);
+  const isDragging = useRef(false);
+  const startPos = useRef(0);
+  const currentTranslate = useRef(0);
+  const prevTranslate = useRef(0);
+  const animationRef = useRef(null);
 
   const start = () => {
     stop();
     timerRef.current = setInterval(() => {
-      setCurrent(p => (p + 1) % images.length);
+      setCurrent(prevCurrent => (prevCurrent + 1) % images.length);
     }, AUTOPLAY_MS);
   };
 
@@ -57,6 +52,90 @@ export default function Carousel() {
     return stop;
   }, []);
 
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const handleTouchStart = (e) => handleDragStart(e.touches[0].clientX);
+    const handleTouchMove = (e) => handleDragMove(e.touches[0].clientX);
+    const handleMouseDown = (e) => handleDragStart(e.clientX);
+    const handleMouseMove = (e) => handleDragMove(e.clientX);
+    
+    stage.addEventListener("mousedown", handleMouseDown);
+    stage.addEventListener("touchstart", handleTouchStart, { passive: true });
+    stage.addEventListener("mousemove", handleMouseMove);
+    stage.addEventListener("touchmove", handleTouchMove, { passive: true });
+    
+    const handleDragEnd = () => {
+      if (!isDragging.current) return;
+      isDragging.current = false;
+      
+      const movedBy = currentTranslate.current - prevTranslate.current;
+      
+      if (movedBy < -50) {
+        next();
+      } else if (movedBy > 50) {
+        prev();
+      } else {
+        setPositionByIndex();
+      }
+      stage.classList.remove(styles.isDragging);
+      start();
+    };
+
+    window.addEventListener("mouseup", handleDragEnd);
+    window.addEventListener("touchend", handleDragEnd);
+    window.addEventListener("mouseleave", handleDragEnd);
+
+    return () => {
+      stage.removeEventListener("mousedown", handleMouseDown);
+      stage.removeEventListener("touchstart", handleTouchStart);
+      stage.removeEventListener("mousemove", handleMouseMove);
+      stage.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("mouseup", handleDragEnd);
+      window.removeEventListener("touchend", handleDragEnd);
+      window.removeEventListener("mouseleave", handleDragEnd);
+      cancelAnimationFrame(animationRef.current);
+    };
+  }, [current]);
+
+  const handleDragStart = (clientX) => {
+    stop();
+    isDragging.current = true;
+    startPos.current = clientX;
+    prevTranslate.current = -current * stageRef.current.offsetWidth;
+    stageRef.current.classList.add(styles.isDragging);
+    animationRef.current = requestAnimationFrame(animationLoop);
+  };
+  
+  const handleDragMove = (clientX) => {
+    if (!isDragging.current) return;
+    const currentPosition = clientX;
+    currentTranslate.current = prevTranslate.current + currentPosition - startPos.current;
+  };
+  
+  const setPositionByIndex = () => {
+    currentTranslate.current = -current * stageRef.current.offsetWidth;
+    prevTranslate.current = currentTranslate.current;
+    setStagePosition();
+  };
+
+  const animationLoop = () => {
+    setStagePosition();
+    if (isDragging.current) requestAnimationFrame(animationLoop);
+  };
+
+  const setStagePosition = () => {
+    stageRef.current.style.transform = `translateX(${currentTranslate.current}px)`;
+  };
+  
+  useEffect(() => {
+    if (!isDragging.current && stageRef.current) {
+        setPositionByIndex();
+    }
+  }, [current]);
+
+
   const onKeyDown = (e) => {
     if (e.key === "ArrowRight") next();
     if (e.key === "ArrowLeft") prev();
@@ -70,44 +149,32 @@ export default function Carousel() {
       aria-label="Galeria de imagens"
       tabIndex={0}
       onKeyDown={onKeyDown}
-      onMouseEnter={stop}
-      onMouseLeave={start}
     >
-      <div className={styles.stage} aria-live="polite">
+      <div
+        ref={stageRef}
+        className={styles.stage}
+        aria-live="polite"
+      >
         {images.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt={`Slide ${i + 1} de ${images.length}`}
-            className={[
-              styles.slide,
-              i === current ? styles.active : "",
-              loaded[i] ? styles.loaded : styles.notLoaded,
-            ].join(" ")}
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-            draggable={false}
-          />
+          <div key={i} className={styles.slideContainer}>
+            <img
+              src={src}
+              alt={`Slide ${i + 1} de ${images.length}`}
+              className={styles.slide}
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
+            />
+          </div>
         ))}
       </div>
 
-      <button
-        type="button"
-        className={`${styles.navBtn} ${styles.prev}`}
-        aria-label="Anterior"
-        onClick={prev}
-      >
+      <button type="button" className={`${styles.navBtn} ${styles.prev}`} aria-label="Anterior" onClick={prev}>
         <svg viewBox="0 0 24 24" fill="none" style={{ transform: "rotate(180deg)" }}>
           <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
 
-      <button
-        type="button"
-        className={`${styles.navBtn} ${styles.next}`}
-        aria-label="Próximo"
-        onClick={next}
-      >
+      <button type="button" className={`${styles.navBtn} ${styles.next}`} aria-label="Próximo" onClick={next}>
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M10 7L15 12L10 17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

@@ -1,52 +1,39 @@
-/* Animação de fade-in para o slide ativo */
-@keyframes fadeIn {
-  from { opacity: 0.6; }
-  to   { opacity: 1; }
-}
-
 .carousel {
   position: relative;
   width: 100%;
   max-width: 900px;
-  max-height: 500px;
-  height: 100%;
   margin: auto;
-  overflow: hidden;
+  overflow: hidden; 
   border-radius: 16px;
   -webkit-tap-highlight-color: transparent;
-  aspect-ratio: 16 / 9;
   background-color: #151515;
+  aspect-ratio: 16 / 9;
 }
 
 .stage {
-  position: relative;
-  width: 100%;
+  display: flex;
   height: 100%;
-  contain: paint;
-  display: block;
+  transition: transform 0.5s ease-out;
+}
+
+.stage.isDragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.slideContainer {
+  flex: 0 0 100%; 
+  min-width: 100%;
+  position: relative;
+  height: 100%;
 }
 
 .slide {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
-  opacity: 0;
-  pointer-events: none;
-  backface-visibility: hidden;
-  transform: translateZ(0);  
-  will-change: opacity;
-  transition: opacity 280ms ease-in-out;
-}
-
-.slide.loaded { opacity: 0; }
-.slide.notLoaded { opacity: 0; }
-
-/* Slide visível */
-.slide.active {
-  opacity: 1;
-  animation: fadeIn 0.8s ease-in-out;
+  user-select: none; 
 }
 
 .navBtn {
@@ -64,7 +51,7 @@
   justify-content: center;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.16s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .navBtn svg {
@@ -110,22 +97,21 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.dot.active,
-.activeDot {
+.dot.activeDot {
   background-color: white;
   transform: scale(1.2);
 }
 
 @media (max-width: 640px) {
-  .navBtn { width: 32px; height: 32px; }
-  .navBtn svg { width: 20px; height: 20px; }
+  .navBtn {
+    width: 32px;
+    height: 32px;
+  }
+  .navBtn svg {
+    width: 20px;
+    height: 20px;
+  }
   .prev { left: 0.5rem; }
   .next { right: 0.5rem; }
-  .dots { bottom: 1rem; gap: 8px; }
-  .dot { width: 8px; height: 8px; }
-}
-
-@media (max-width: 375px) {
-  .dots { bottom: .5rem; gap: 4px; }
-  .dot { width: 6px; height: 6px; }
+  .dots { bottom: 1rem; }
 }

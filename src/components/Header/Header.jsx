@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Header.module.css";
 import logo from "/assets/images/logos/logo2.png";
-import { HomeIcon, PaletteIcon, InfoIcon, LeafIcon, NewsIcon } from "./Icons"; // Seus componentes de ícone
+import { HomeIcon, PaletteIcon, InfoIcon, LeafIcon, NewsIcon } from "./Icons";
 
 const nav = [
   { href: "/", label: "Início", icon: <HomeIcon /> },

@@ -2,9 +2,30 @@
   --accent-color: #e63946;
 }
 
+@keyframes bannerFadeIn {
+  from {
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bannerSection {
+  height: 60vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+}
+
 .banner {
-  height: 50vh;
-  min-height: 350px;
+  height: 100%;
   width: 100%;
   position: relative;
   display: grid;
@@ -12,6 +33,7 @@
   background-size: cover;
   background-position: center;
   color: white;
+  animation: bannerFadeIn 1s ease-out forwards;
 }
 
 .bannerOverlay {
@@ -30,6 +52,13 @@
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
+  animation: bannerFadeIn 1s ease-out forwards;
+}
+
+.pageContent {
+  position: relative;
+  z-index: 2;
+  background: #fff;
 }
 
 .contentSection {
@@ -63,7 +92,7 @@
   line-height: 1.7;
   color: #495057;
   margin-bottom: 1.5rem;
-  max-width: 720px; /* Limita a largura do texto para melhor leitura */
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -89,26 +118,30 @@
 }
 
 .liderancasBg {
-  background-color: #f8f9fa; /* Fundo sutil para diferenciar a seção */
+  background-color: #f8f9fa;
 }
 
 .lideresContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
 .liderCard {
+  flex: 1 1 300px;
   background: white;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
 }
 
 .liderCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.08), 0 15px 30px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08), 0 15px 30px rgba(0,0,0,0.08);
 }
 
 .liderImage {
@@ -145,8 +178,6 @@
   max-width: none;
 }
 
-
-/* --- Media Queries para Telas Menores --- */
 @media (max-width: 768px) {
   .bannerTitle {
     font-size: 2.25rem;
@@ -167,4 +198,15 @@
   .contentSection p {
     font-size: 1rem;
   }
+}
+
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animateOnScroll.isVisible {
+  opacity: 1;
+  transform: translateY(0);
 }

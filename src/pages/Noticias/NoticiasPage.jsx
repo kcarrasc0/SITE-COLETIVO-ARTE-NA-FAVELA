@@ -5,14 +5,14 @@ import Footer from "../../components/Footer/Footer";
 
 import styles from "./NoticiasPage.module.css"; 
 
- import imgJovensNoClima from "/assets/images/jovensnoclima.jpg";
+ import imgJovensNoClima from "/assets/images/jovens-no-clima/jovensnoclima.jpg";
  import imgCursoTech from "/assets/images/cursotech.jpg";
  import imgFeiraLiteraria from "/assets/images/feiral.jpg";
- import imgEventoJovensClima from "/assets/images/eventjc.jpg";
+ import imgEventoJovensClima from "/assets/images/jovens-no-clima/eventjc.jpg";
  import imgPlanoNacional from "/assets/images/planonacional.jpg";
  import imgFeiraPataxoh from "/assets/images/feirapataxo.jpg";
- import imgCOP30 from "/assets/images/image3.jpg";
- import imgComunicacao1 from "/assets/images/comunicacao1.jpg";
+ import imgCOP30 from "/assets/images/jovens-no-clima/image3.jpg";
+ import imgComunicacao1 from "/assets/images/jovens-no-clima/comunicacao1.jpg";
 
 
 function NoticiasPage() {
