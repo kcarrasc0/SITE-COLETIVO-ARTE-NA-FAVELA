@@ -3,7 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import AnimateOnScroll from '../../components/AnimateOnScroll'; // 1. IMPORTE O NOVO COMPONENTE
 import styles from './SobrePage.module.css';
 
-import bannerImage from '/assets/images/jovens-no-clima/image 15.png';
+import bannerImage from '../../assets/images/jovens-no-clima/image 15.png';
 import fotoMaria from '/assets/images/staff/alice.jpg';
 import fotoErick from '/assets/images/staff/carrasco.png';
 
