@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import styles from './AtividadesPage.module.css';
 
 // TODO: Substitua os caminhos pelas suas imagens corretas da pasta assets
-import bannerImage from '../../assets/images/atividade/image1.jpg'; // Imagem de fundo do banner
+import bannerImage from '/assets/images/atividade/image1.jpg'; // Imagem de fundo do banner
 import imgComAmbiental from '/assets/images/atividade/atividade1.jpg';
 import imgBatalhaCultural from '/assets/images/atividade/atividade2.jpg';
 import imgComBreaknasescolas from '/assets/images/atividade/atividade3.jpg';
