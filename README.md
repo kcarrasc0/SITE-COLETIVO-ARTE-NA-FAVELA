@@ -68,7 +68,7 @@ SITE-COLETIVO-ARTE-NA-FAVELA/
 ├── dist/                   \# Pasta de build, com os arquivos finais para produção
 ├── public/                 \# Arquivos estáticos (imagens, fontes)
 │   └── assets/
-│       └── images/         \# Imagens utilizadas no projeto
+│       └── images/         \# Imagens utilizadas no projeto e outras pastas com imagens para cada noticia
 │
 ├── src/                    \# Código fonte da aplicação
 │   ├── components/         \# Componentes React reutilizáveis (Header, Footer, etc.)
@@ -76,6 +76,8 @@ SITE-COLETIVO-ARTE-NA-FAVELA/
 │   │   ├── Carousel/
 │   │   ├── Coletivo/
 │   │   ├── Footer/
+│   │   ├── NoticiaCard/
+│   │   ├── NoticiaModal/
 │   │   └── Header/
 │   │
 │   ├── pages/              \# Páginas principais da aplicação (Home, Sobre, etc.)
