@@ -1,0 +1,56 @@
+.card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid; /* Técnica para alinhar a imagem e o overlay perfeitamente */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  height: 100%; /* Garante que todos os cards em um grid tenham a mesma altura */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Garante que tanto a imagem quanto o overlay ocupem o mesmo espaço dentro do card */
+.card > * {
+  grid-area: 1 / 1;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Evita que a imagem fique distorcida */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; /* Ocupa todo o espaço do card */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinha o conteúdo na base do card */
+  padding: 1rem;
+  color: white;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%); /* Gradiente para dar legibilidade */
+}
+
+.overlay h3 {
+  margin: 0.5rem 0 0;
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 1rem;
+}
+
+.tag {
+  background: #E53935; /* Vermelho para destaque */
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-self: flex-start; /* Faz com que a tag não ocupe a largura toda */
+  margin-bottom: 0.5rem;
+}

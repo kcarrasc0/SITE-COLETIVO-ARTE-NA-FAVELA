@@ -1,139 +1,214 @@
-.noticias-container {
-  /* Unimos as duas regras: 100px no topo, 5% nos lados, 2rem na base */
+.container {
   padding: 100px 5% 2rem;
-  background: #f9f4f4;
+  background: #f4f5f7;
   font-family: Arial, sans-serif;
 }
 
-/* Destaques */
-.destaques {
+/* --- ESTILOS DAS NOVAS SEÇÕES (TOPO) --- */
+
+.heroSection {
+  margin-bottom: 3rem;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.heroGrid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
-  margin-bottom: 3rem;
 }
 
-.destaque-principal {
-  position: relative;
+.heroPrincipal h3 {
+  font-size: 2rem !important; /* Dando mais destaque ao título principal */
 }
 
-.destaque-principal img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.destaques-secundarios {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.card {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  display: grid;
-}
-
-.card > * {
-  grid-area: 1 / 1;
-}
-
-/* Card genérico */
-.card img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9; /* mantém proporção correta */
-  object-fit: cover;
-  display: block;
-}
-
-/* Overlay unificado */
-.overlay {
-  position: absolute;
-  inset: 0;
+.heroDireita {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
-  color: white;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+  gap: 1.5rem;
 }
 
-/* Títulos */
-.overlay h2,
-.overlay h3 {
-  margin: 0.5rem 0 0;
-  font-weight: 700;
-  line-height: 1.3;
+.maisLidasGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Agora com 4 colunas */
+  gap: 1.5rem;
 }
 
-.overlay h2 {
-  font-size: 1.4rem;
+.divisor {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 3rem auto;
+    max-width: 1400px;
 }
 
-.overlay h3 {
-  font-size: 1rem;
+
+/* --- ESTILOS DA SEÇÃO INFERIOR (DUAS COLUNAS) --- */
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Tags */
-.tag {
-  background: #E53935; /* azul como no Figma */
-  color: white;
-  padding: 4px 10px;
-  font-size: 0.7rem;
-  border-radius: 4px;
+.colunaPrincipal, .colunaLateral {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.secaoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+.secaoHeader h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.secaoHeader a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Lista de destaques (coluna principal) */
+.destaquesLista {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cardHorizontal {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s;
+}
+
+.cardHorizontal:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cardHorizontal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardHorizontalConteudo {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.cardHorizontalConteudo span {
+  font-size: 0.75rem;
+  color: #007bff;
   font-weight: bold;
   text-transform: uppercase;
-  align-self: flex-start;
-  margin-bottom: 0.5rem;
+}
+.cardHorizontalConteudo h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+.cardHorizontalConteudo p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
 }
 
-/* Sessão Mais lidas */
-.noticias-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+/* --- COLUNA LATERAL --- */
+.cardPromocional {
+  background: #1a1a2e;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+.cardPromocional h2 {
+  font-size: 2rem;
+  margin: 1rem 0 2rem;
+}
+.cardPromocional a {
+  display: inline-block;
+  background: #ffffff;
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cardPromocional a:hover {
+  background: #0932e7;
+  color: white;
+}
+
+.listaLateral {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardLateral {
+  display: flex;
   gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
-
-.noticias-grid .card img {
-  aspect-ratio: 16 / 9;
+.cardLateral img {
+  width: 100px;
+  height: 75px;
   object-fit: cover;
   border-radius: 6px;
+  flex-shrink: 0;
 }
-
-.noticias-grid .card h3 {
-  font-size: 0.9rem;
+.cardLateral span {
+  font-size: 0.75rem;
+  color: #007bff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cardLateral p {
+  margin-top: 0.25rem;
   font-weight: 600;
-  margin-top: 0.5rem;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
-
-
-/* Responsividade */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
-  .destaques {
+  .heroGrid, .layoutGrid {
     grid-template-columns: 1fr;
   }
-
-  .destaques-secundarios {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .noticias-grid {
+  .maisLidasGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .destaques-secundarios {
+@media (max-width: 768px) {
+  .maisLidasGrid {
     grid-template-columns: 1fr;
   }
-
-  .noticias-grid {
-    grid-template-columns: 1fr;
+  .cardHorizontal {
+    grid-template-columns: 1fr; /* Imagem fica em cima do texto */
+  }
+  .cardHorizontal img {
+    height: 200px;
+  }
+  .cardHorizontalConteudo {
+    padding: 1rem;
   }
 }
