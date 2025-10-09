@@ -2,26 +2,36 @@ import { Link } from "react-router-dom";
 import styles from "./Atividades.module.css";
 import { InfoIcon } from "../Header/Icons";
 
+// 1. Importamos todas as imagens necessárias
+import imgAtividade1 from '../../assets/images/atividade/atividade1.jpg';
+import imgAtividade2 from '../../assets/images/atividade/atividade2.jpg';
+import imgAtividade3 from '../../assets/images/atividade/atividade3.jpg';
+import imgAtividade4 from '../../assets/images/atividade/atividade4.jpg';
+import imgAtividade5 from '../../assets/images/atividade/atividade5.png';
+import imgAtividade6 from '../../assets/images/atividade/atividade6.jpg';
+import imgAtividade7 from '../../assets/images/atividade/atividade7.png';
+
+
 const atividades = [
   {
     titulo: "Comunicação Ambiental",
     descricao: "Capacitação de jovens para se tornarem comunicadores e agentes de mudança, com foco em Clima, Saúde e Tecnologia.",
-    imagem: "assets/images/atividade/atividade1.jpg"
+    imagem: imgAtividade1 // 2. Usamos a variável importada
   },
   {
     titulo: "Batalha Cultural",
     descricao: "A Batalha Cultural dá voz e identidade à juventude, tornando a rima um instrumento de debate e conscientização no Ibura.",
-    imagem: "assets/images/atividade/atividade2.jpg"
+    imagem: imgAtividade2
   },
   {
     titulo: "Break nas Escolas",
     descricao: "Levamos a arte do break e os valores do hip-hop para escolas da periferia como forma de empoderamento e superação.",
-    imagem: "assets/images/atividade/atividade3.jpg"
+    imagem: imgAtividade3
   },
   {
     titulo: "Cine Ibura",
     descricao: "Nosso cineclube comunitário que promove exibições e debates sobre questões sociais, culturais e ambientais.",
-    imagem: "assets/images/atividade/atividade4.jpg"
+    imagem: imgAtividade4
   },
   
 ];
@@ -30,17 +40,17 @@ const atividades2 = [
   {
     titulo: "Resenha IB",
     descricao: "Um projeto voltado ao fortalecimento de MCs e artistas da cena hip-hop local, oferecendo estrutura para gravação de músicas.",
-    imagem: "assets/images/atividade/atividade5.png"
+    imagem: imgAtividade5
   },
   {
     titulo: "Periferia Tech",
     descricao: "Oferecemos cursos de tecnologia de forma remota, ensinando boas práticas do mercado de trabalho para o dia a dia.",
-    imagem: "assets/images/atividade/atividade6.jpg"
+    imagem: imgAtividade6
   },
   {
     titulo: "EcoVision",
     descricao: "Web App de monitoramento ambiental criado nas aulas de Tecnologia para acompanhar dados de desmatamento.",
-    imagem: "assets/images/atividade/atividade7.png"
+    imagem: imgAtividade7
   }
 ]
 

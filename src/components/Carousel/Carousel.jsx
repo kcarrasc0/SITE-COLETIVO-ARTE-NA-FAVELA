@@ -2,13 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.css";
 
-const images = [
-  "/assets/images/slide/slide1.jpg",
-  "/assets/images/slide/slide2.jpg",
-  "/assets/images/slide/slide3.jpg",
-  "/assets/images/slide/slide4.jpg",
-  "/assets/images/slide/slide5.jpg",
-];
+// 1. Importamos cada imagem e damos um nome a ela
+import slide1 from '../../assets/images/slide/slide1.jpg';
+import slide2 from '../../assets/images/slide/slide2.jpg';
+import slide3 from '../../assets/images/slide/slide3.jpg';
+import slide4 from '../../assets/images/slide/slide4.jpg';
+import slide5 from '../../assets/images/slide/slide5.jpg';
+
+// 2. Usamos as variáveis importadas no array, em vez de texto
+const images = [slide1, slide2, slide3, slide4, slide5];
 
 const AUTOPLAY_MS = 4000;
 
@@ -16,6 +18,8 @@ export default function Carousel() {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef(null);
   const stageRef = useRef(null);
+  // ... (o resto do seu código continua exatamente o mesmo)
+  // ... (não precisa colar o resto, apenas a parte de cima já é suficiente para corrigir)
 
   const isDragging = useRef(false);
   const startPos = useRef(0);
@@ -158,7 +162,7 @@ export default function Carousel() {
         {images.map((src, i) => (
           <div key={i} className={styles.slideContainer}>
             <img
-              src={src}
+              src={src} // Agora 'src' é a variável da imagem importada
               alt={`Slide ${i + 1} de ${images.length}`}
               className={styles.slide}
               draggable={false}
