@@ -27,7 +27,7 @@ const heroPrincipalData = {
 };
 
 const heroDireitaData = [
-  { id: 1, imagem: imgRecZeca, alt: "Zeca", tag: "TECNOLOGIA", titulo: "Zeca tem alestra confirmada sobre tecnologia e música no Rec'n'Play", textoCompleto: `Zeca estara como palestrante na palestra “Sintetizando o futuro: A inteligência artificial na música”. Vai ser uma oportunidade única para conversarmos sobre como a IA está transformando a criação, produção e a nossa experiência musical, explorando os limites e as possibilidades dessa revolução. Será uma honra ter vocês lá para trocar ideias e descobrir os sons do amanhã! Conto com a presença de vocês!
+  { id: 1, imagem: imgRecZeca, alt: "Zeca", tag: "TECNOLOGIA", titulo: "Zeca tem Palestra confirmada sobre tecnologia e música no Rec'n'Play", textoCompleto: `Zeca estara como palestrante na palestra “Sintetizando o futuro: A inteligência artificial na música”. Vai ser uma oportunidade única para conversarmos sobre como a IA está transformando a criação, produção e a nossa experiência musical, explorando os limites e as possibilidades dessa revolução. Será uma honra ter vocês lá para trocar ideias e descobrir os sons do amanhã! Conto com a presença de vocês!
  ${loremText}` },
 
   { id: 2, imagem: imgCop30, alt: "Jovens no Clima", tag: "COP30", titulo: "Coletivo Arte na favela agora se prepara para ida a COP30", textoCompleto: `A Conferência das Nações Unidas sobre as Mudanças Climáticas de 2025, também chamada de COP30 será a 30.ª Conferência das Nações Unidas sobre as Mudanças Climáticas, prevista para ocorrer entre os dias 10 e 21 de novembro de 2025, na cidade de Belém. ${loremText}` },
@@ -46,7 +46,7 @@ const maisLidasSemanaData = [
 ];
 
 const destaquesIaData = [
-    { id: 8, imagem: imgRecZeca, alt: "Zeca", tag: "TECNOLOGIA", titulo: "Zeca tem alestra confirmada sobre tecnologia e música no Rec'n'Play", textoCompleto: `Zeca estara como palestrante na palestra “Sintetizando o futuro: A inteligência artificial na música”. Vai ser uma oportunidade única para conversarmos sobre como a IA está transformando a criação, produção e a nossa experiência musical, explorando os limites e as possibilidades dessa revolução. Será uma honra ter vocês lá para trocar ideias e descobrir os sons do amanhã! Conto com a presença de vocês! ${loremText}` },
+    { id: 8, imagem: imgRecZeca, alt: "Zeca", tag: "TECNOLOGIA", titulo: "Zeca tem Palestra confirmada sobre tecnologia e música no Rec'n'Play", textoCompleto: `Zeca estara como palestrante na palestra “Sintetizando o futuro: A inteligência artificial na música”. Vai ser uma oportunidade única para conversarmos sobre como a IA está transformando a criação, produção e a nossa experiência musical, explorando os limites e as possibilidades dessa revolução. Será uma honra ter vocês lá para trocar ideias e descobrir os sons do amanhã! Conto com a presença de vocês! ${loremText}` },
 
     { id: 9, imagem: imgCop30, alt: "Jovens no Clima", tag: "COP30", titulo: "Coletivo Arte na favela agora se prepara para ida a COP30", textoCompleto: `A Conferência das Nações Unidas sobre as Mudanças Climáticas de 2025, também chamada de COP30 será a 30.ª Conferência das Nações Unidas sobre as Mudanças Climáticas, prevista para ocorrer entre os dias 10 e 21 de novembro de 2025, na cidade de Belém. ${loremText}` },
 ];
