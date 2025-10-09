@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import logo from "/assets/images/logos/logo2.png";
+import logo from "../../assets/images/logos/logo2.png";
 import { HomeIcon, PaletteIcon, InfoIcon, LeafIcon, NewsIcon } from "./Icons";
 
 const nav = [
