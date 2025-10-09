@@ -7,15 +7,15 @@ import NoticiaModal from "../../components/NoticiaModal/NoticiaModal";
 import styles from "./NoticiasPage.module.css";
 
 // Importações de imagens
-import imgRecAlice from "/assets/images/noticias/recalice1.png";
-import imgRecZeca from "/assets/images/noticias/reczeca.jpg";
-import imgCop30 from "/assets/images/noticias/cop30.jpg";
-import imgCursoTech from "/assets/images/cursos/cursotech.jpg";
-import imgPlanoNacional from "/assets/images/planonacional.jpg";
-import imgFeiraPataxoh from "/assets/images/noticias/feirapataxo.jpg";
-import imgEcoVision from "/assets/images/noticias/ecovision.png";
-import imgComunicacao1 from "/assets/images/noticias/comunicacao1.jpg";
-import imgRecnPlay from "/assets/images/noticias/recnplay.png";
+import imgRecAlice from "../../assets/images/noticias/recalice1.png";
+import imgRecZeca from "../../assets/images/noticias/reczeca.jpg";
+import imgCop30 from "../../assets/images/noticias/cop30.jpg";
+import imgCursoTech from "../../assets/images/cursos/cursotech.jpg";
+import imgPlanoNacional from "../../assets/images/planonacional.jpg";
+import imgFeiraPataxoh from "../../assets/images/noticias/feirapataxo.jpg";
+import imgEcoVision from "../../assets/images/noticias/ecovision.png";
+import imgComunicacao1 from "../../assets/images/noticias/comunicacao1.jpg";
+import imgRecnPlay from "../../assets/images/noticias/recnplay.png";
 
 
 // --- DADOS COMPLETOS PARA AS SEÇÕES ---
