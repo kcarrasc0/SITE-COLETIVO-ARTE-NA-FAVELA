@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.css";
 
 const images = [
-  "../../src/assets/images/slide/slide1.jpg",
-  "../../src/assets/images/slide/slide2.jpg",
-  "../../src/assets/images/slide/slide3.jpg",
-  "../../src/assets/images/slide/slide4.jpg",
-  "../../src/assets/images/slide/slide5.jpg",
+  "assets/images/slide/slide1.jpg",
+  "assets/images/slide/slide2.jpg",
+  "assets/images/slide/slide3.jpg",
+  "assets/images/slide/slide4.jpg",
+  "assets/images/slide/slide5.jpg",
 ];
 
 const AUTOPLAY_MS = 4000;
