@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Coletivo.module.css";
-import coletivoImg from "/assets/images/o-coletivo.jpg";
+import coletivoImg from "../../assets/images/o-coletivo.jpg";
 
 const Coletivo = () => {
   return (
