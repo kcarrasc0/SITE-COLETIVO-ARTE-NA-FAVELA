@@ -1,9 +1,9 @@
 import styles from './Footer.module.css';
 
-import logoFundo from '/assets/images/logos/logo2.png';
-import logoKcarrasco from '/assets/images/logos/logokcarrasco.png';
-import logoJovens from '/assets/images/logos/logojovensnoclima.png';
-import logoRfec from '/assets/images/logos/rfec-logo.png';
+import logoFundo from '../../assets/images/logos/logo2.png';
+import logoKcarrasco from '../../assets/images/logos/logokcarrasco.png';
+import logoJovens from '../../assets/images/logos/logojovensnoclima.png';
+import logoRfec from '../../assets/images/logos/rfec-logo.png';
 
 const Footer = () => {
   return (
