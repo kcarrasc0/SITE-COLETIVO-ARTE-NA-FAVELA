@@ -4,7 +4,7 @@ import styles from './ComunicacaoPage.module.css';
 
 import bannerImage from '../../assets/images/jovens-no-clima/comunicacao2.jpg';
 import emblemImage from '../../assets/images/logos/logocomunicacao.jpg';
-import mainImage from '../../assets/images/jovens-no-clima/comunicacao1.jpg';
+import mainImage from '../../assets/images/jovens-no-clima/comunicacao2.jpg';
 
 const ComunicacaoPage = () => {
   return (
